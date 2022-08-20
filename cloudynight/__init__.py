@@ -10,8 +10,9 @@ cloudynight.
 import os
 import logging
 from scipy.stats import uniform, randint
-
 from astropy.visualization import ZScaleInterval
+
+#from my_settings import DIR_BASE
 
 class ConfExample():
     """Allsky camera configuration class."""
@@ -22,8 +23,7 @@ class ConfExample():
         # subdirectories that are, e.g., separated by nights)
 
         # define base directory
-        self.DIR_BASE = os.path.join(
-            ' ', *os.path.abspath(__file__).split('/')[:-2]).strip()
+        self.DIR_BASE = "/Users/mohammad/Documents/Machin_learning/Habib_proj/all_sky/cloudynight"
         # location of module base (for example data)
 
         # raw data directory root
@@ -51,7 +51,7 @@ class ConfExample():
         self.SEP_BKGYRANGE = 5     # number of background boxes in y
 
         # max solar elevation for processing (deg)
-        self.MAX_SOLAR_ELEVATION = -6;  
+        self.MAX_SOLAR_ELEVATION = -6;
 
         # image crop ranges (ROI must be square)
         self.X_CROPRANGE = (220, 1190)
@@ -129,7 +129,7 @@ class ConfExample():
             datefmt='%m/%d/%Y %H:%M:%S')
         self.logger=logging.getLogger(__name__)
 
-        
+
 conf = ConfExample()
 
 
